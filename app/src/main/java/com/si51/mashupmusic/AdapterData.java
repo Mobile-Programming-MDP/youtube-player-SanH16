@@ -1,5 +1,6 @@
 package com.si51.mashupmusic;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,12 +29,30 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.DataViewHolder
     public void onBindViewHolder(@NonNull DataViewHolder holder, int position) {
         DataModel dataModel = dataModelArrayList.get(position);
 
+        holder.tvJudul.setText(dataModel.getJudul());
+        holder.tvKeterangan.setText(dataModel.getKeterangan());
+        holder.tvVideoid.setText(dataModel.getVideoid());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String judul = dataModelArrayList.get(holder.getBindingAdapterPosition()).getJudul();
+                String keterangan = dataModelArrayList.get(holder.getBindingAdapterPosition()).getKeterangan();
+                String videoid = dataModelArrayList.get(holder.getBindingAdapterPosition()).getVideoid();
+
+                Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
+                intent.putExtra("varJudul", judul);
+                intent.putExtra("varKeterangan", keterangan);
+                intent.putExtra("varVideoid", videoid);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
+
     }
 
     @Override
     public int getItemCount() {
-        this.dataModelArrayList.size();
-        return 0;
+        return dataModelArrayList.size();
     }
 
     public class DataViewHolder extends RecyclerView.ViewHolder {

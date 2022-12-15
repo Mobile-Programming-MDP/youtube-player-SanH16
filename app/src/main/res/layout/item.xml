@@ -16,6 +16,7 @@
             android:text="Judul"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:justificationMode="inter_word"
             />
 
         <TextView
@@ -25,6 +26,7 @@
             android:text="Keterangan"
             android:maxLines="2"
             android:ellipsize="end"
+            android:justificationMode="inter_word"
             />
 
         <TextView
@@ -32,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Video Id"
-            android:visibility="gone"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

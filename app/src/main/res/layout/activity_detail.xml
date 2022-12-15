@@ -19,6 +19,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginBottom="6dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
         />
 
     <TextView
@@ -30,6 +32,14 @@
         android:justificationMode="inter_word"
         android:layout_marginBottom="6dp"
         />
+
+    <TextView
+        android:id="@+id/tv_videoid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:text="videoid"
+        android:visibility="gone"/>
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/ypv_video"
